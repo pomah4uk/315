@@ -98,12 +98,12 @@
                                                 @csrf
                                                 <input class="d-none" type="text" name='id' value='{{ $item->id }}'>
                                                 <input class="form-control mb-2" type="text" name='name' placeholder="Имя" value="{{ $item->name }}">
-                                                <input class="form-control mb-2" type="number" name='address' placeholder="Адрес" value="{{ $item->address }}">
-                                                <input class="form-control mb-2" type="email" name="phone" placeholder="Телефон" value="{{ $item->phone }}">
-                                                <input class="form-control mb-2" type="email" name="description" placeholder="Описание" value="{{ $item->description }}">
+                                                <input class="form-control mb-2" type="text" name='address' placeholder="Адрес" value="{{ $item->address }}">
+                                                <input class="form-control mb-2" type="number" name="phone" placeholder="Телефон" value="{{ $item->phone }}">
+                                                <input class="form-control mb-2" type="text" name="description" placeholder="Описание" value="{{ $item->description }}">
                                                 <input class="form-control mb-2" type="email" name="email" placeholder="Почта" value="{{ $item->email }}">
-                                                <input class="form-control mb-2" type="email" name="social_media" placeholder="Соцюсети" value="{{ $item->social_media }}">
-                                                <input class="form-control mb-2" type="email" name="working_hours" placeholder="Время работы" value="{{ $item->working_hours }}">
+                                                <input class="form-control mb-2" type="text" name="social_media" placeholder="Соцюсети" value="{{ $item->social_media }}">
+                                                <input class="form-control mb-2" type="text" name="working_hours" placeholder="Время работы" value="{{ $item->working_hours }}">
                                                 <div class="modal-footer">
                                                     <button type="submit" class='btn btn-success'>Обновить</button>
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>

@@ -18,7 +18,7 @@ return new class extends Migration
                 $table->text('description');
                 $table->string('duration');
                 $table->decimal('price', 10, 2);
-                $table->enum('status', ['active', 'inactive']);
+                $table->enum('status', ['Активен', 'Не активен']);
                 $table->timestamps();
             });
         }

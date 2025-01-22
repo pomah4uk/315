@@ -70,8 +70,9 @@
                                 <td>{{ $user->phone }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>
-                                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#edit{{ $user->id }}">Редактировать</button>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{ $user->id }}">Удалить</button>
+                                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#edit{{ $user->id }}">Редактировать</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete{{ $user->id }}">Удалить</button>
+                                </td>
                             </tr>
                                         <!-- Редоктирование клиентов -->
                             <div class="modal fade" id="edit{{ $user->id }}" tabindex="-1" role="dialog">

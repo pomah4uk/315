@@ -27,14 +27,13 @@ class CompanyController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'address' => 'required|email|unique:clients_models',
+            'address' => 'required|string|max:255',
             'phone' => 'required|string|regex:/^[0-9]+$/|max:20',
             'description' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
+            'email' => 'required|email|unique:company_models',
             'social_media' => 'required|string|max:255',
             'working_hours' => 'required|string|max:255',
         ]);
-        dd($validated);
         CompanyModel::create($validated);
         return redirect(route('company'))->with('success', 'Клиент добавлен');
     }
@@ -67,7 +66,7 @@ class CompanyController extends Controller
         $data->description = $request->description;
         $data->email = $request->email;
         $data->social_media = $request->social_media;
-        $data->working_hours = $request->phoworking_hours;
+        $data->working_hours = $request->working_hours;
         $data->save();
         return redirect(route('company'))->with('info', 'Данные обновленны');
     }
