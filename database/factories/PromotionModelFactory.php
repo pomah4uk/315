@@ -17,7 +17,7 @@ class PromotionModelFactory extends Factory
             'discount_percent' => $this->faker->numberBetween(5, 50),
             'start_date' => $this->faker->dateTimeBetween('now', '+1 week'),
             'end_date' => $this->faker->dateTimeBetween('+1 week', '+1 month'),
-            'status' => $this->faker->randomElement(['active', 'inactive']),
+            'status' => $this->faker->randomElement(['Активен', 'Не активен']),
         ];
     }
 } 

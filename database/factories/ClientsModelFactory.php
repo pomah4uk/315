@@ -15,7 +15,6 @@ class ClientsModelFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
-            'status' => $this->faker->randomElement(['active', 'inactive']),
         ];
     }
 } 

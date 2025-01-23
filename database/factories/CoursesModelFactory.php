@@ -16,7 +16,7 @@ class CoursesModelFactory extends Factory
             'description' => $this->faker->paragraph(),
             'duration' => $this->faker->numberBetween(1, 12) . ' месяцев',
             'price' => $this->faker->numberBetween(1000, 10000),
-            'status' => $this->faker->randomElement(['active', 'inactive']),
+            'status' => $this->faker->randomElement(['Активен', 'Не активен']),
         ];
     }
 } 
