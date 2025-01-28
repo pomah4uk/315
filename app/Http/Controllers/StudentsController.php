@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Response;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use App\Models\StudentsModel;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+
 
 class StudentsController extends Controller
 {
@@ -20,9 +24,16 @@ class StudentsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request): RedirectResponse
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:students_models',
+            'phone' => 'required|string|regex:/^[0-9]+$/|max:255',
+        ]);
+
+        StudentsModel::create($validated);
+        return redirect(route('students'))->with('success', 'Студент добавлен');
     }
 
     /**
@@ -44,9 +55,14 @@ class StudentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
+    public function edit(Request $request): RedirectResponse
+    {   
+        $data = StudentsModel::find($request->id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->save();
+        return redirect(route('students'))->with('info', 'Данные обновленны');
     }
 
     /**
@@ -60,8 +76,9 @@ class StudentsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(StudentsModel $user): RedirectResponse
     {
-        //
+        $user->delete();
+        return redirect()->route('students')->with('delete', 'Ученик успешно удален');
     }
 }

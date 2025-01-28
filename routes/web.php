@@ -46,6 +46,6 @@ Route::delete('/clients/{user}', [ClientsController::class, 'destroy'])->name('c
 Route::delete('/company/{item}', [CompanyController::class, 'destroy'])->name('company.destroy');
 Route::delete('/courses/{item}', [CoursesController::class, 'destroy'])->name('courses.destroy');
 Route::delete('/Promotion/{item}', [PromotionController::class, 'destroy'])->name('promotion.destroy');
-Route::delete('/slugs/{item}', [SlugsController::class, 'destroy'])->name('slugs.destroy');
+Route::delete('/slugs/{slug}', [SlugsController::class, 'destroy'])->name('slugs.destroy');
 Route::delete('/questions/{item}', [QuestionsController::class, 'destroy'])->name('questions.destroy');
 Route::delete('/students/{user}', [StudentsController::class, 'destroy'])->name('students.destroy');
