@@ -10,11 +10,40 @@
 </head>
 <body>
 
-    <div class="main-content">
-        @yield('content')
+<div class="main-content">
+    <div class="container-fluid bg-secondary">
+        <h2 class='p-4'>{{ $title }}</h2>
     </div>
+    <div class="container-fluid">
+        <div class='row'>
+            <div class="col-2">
+                @include('admin.layouts.sidebar')
+            </div>
+            <div class="col-10 pt-3">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+                @if(session('info'))
+                    <div class="alert alert-info">
+                        {{ session('info') }}
+                    </div>
+                @endif
+
+                @if(session('delete'))
+                    <div class="alert alert-danger">
+                        {{ session('delete') }}
+                    </div>
+                @endif
+                @yield('content')
+            </div>
+        </div>    
+    </div>
+</div>
+
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

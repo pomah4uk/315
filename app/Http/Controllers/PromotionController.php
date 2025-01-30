@@ -16,8 +16,9 @@ class PromotionController extends Controller
      */
     public function index()
     {
+        $title = 'Акции';
         $promotion = PromotionModel::all();
-        return view('admin.promotion.index', compact('promotion'));
+        return view('admin.promotion.index', ['title' => $title, 'promotion' => $promotion]);
     }
 
     /**

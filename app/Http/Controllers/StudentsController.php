@@ -17,8 +17,9 @@ class StudentsController extends Controller
      */
     public function index()
     {
+        $title = 'Студенты';
         $students = StudentsModel::All();
-        return view('admin.students.index', compact('students'));
+        return view('admin.students.index', ['title' => $title, 'students' => $students]);
     }
 
     /**

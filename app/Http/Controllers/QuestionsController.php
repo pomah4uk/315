@@ -17,8 +17,9 @@ class QuestionsController extends Controller
      */
     public function index()
     {
+        $title = 'FAQ';
         $questions = QuestionsModel::all();
-        return view('admin.questions.index', compact('questions'));
+        return view('admin.questions.index', ['title' => $title, 'questions' => $questions]);
     }
 
     /**

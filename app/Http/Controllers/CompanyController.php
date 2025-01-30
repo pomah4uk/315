@@ -16,8 +16,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
+        $title = 'Компании';
         $company = CompanyModel::All();
-        return view('admin.company.index', compact('company'));
+        return view('admin.company.index', ['title' => $title, 'company' => $company]);
     }
 
     /**
