@@ -1,26 +1,75 @@
+/* Стили для сайдбара */
 .sidebar {
-    min-width: 250px;
-    height: calc(100vh - 56px);
     position: fixed;
-    top: 56px;
+    top: 0;
+    left: -250px; /* Начальное положение за пределами экрана */
+    width: 250px;
+    height: 100vh;
+    background: #343a40;
+    transition: all 0.3s ease;
+    z-index: 1050;
+    padding-top: 60px; /* Отступ для шапки */
+}
+
+.sidebar.show {
     left: 0;
-    z-index: 100;
-    transform: translateX(0);
-    transition: transform 0.3s ease;
 }
 
-.sidebar.hidden {
-    transform: translateX(-100%);
+/* Стили для ссылок в меню */
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    transition: all 0.3s;
 }
 
-.navbar-toggler:focus {
-    box-shadow: none;
+.sidebar .nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.btn-link {
-    text-decoration: none;
+.sidebar .nav-link.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
 }
 
-.btn-link:hover {
-    opacity: 0.8;
+/* Затемнение фона при открытом меню */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
 }
+
+.overlay.show {
+    display: block;
+}
+
+/* Основной контент */
+.main-content {
+    transition: margin-left 0.3s ease;
+}
+
+/* Шапка */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+/* Контент */
+.content {
+    margin-top: 60px; /* Отступ для фиксированной шапки */
+}
+
+/* Иконки в меню */
+.sidebar .nav-link i {
+    width: 20px;
+    text-align: center;
+    margin-right: 10px;
+} 
