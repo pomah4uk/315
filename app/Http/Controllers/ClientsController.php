@@ -16,8 +16,9 @@ class ClientsController extends Controller
      */
     public function index(): View
     {
+        $title = 'Клиенты';
         $clients = ClientsModel::all();
-        return view('admin.clients.index', compact('clients'));
+        return view('admin.clients.index', ['title' => $title, 'clients' => $clients]);
     }
 
     /**

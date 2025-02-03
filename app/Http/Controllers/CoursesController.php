@@ -16,8 +16,9 @@ class CoursesController extends Controller
      */
     public function index()
     {
+        $title = 'Курсы';
         $courses = CoursesModel::all();
-        return view('admin.courses.index', compact('courses'));
+        return view('admin.courses.index', ['title' => $title, 'courses' => $courses]);
     }
 
     /**

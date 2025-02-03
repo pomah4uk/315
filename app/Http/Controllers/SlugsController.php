@@ -16,8 +16,9 @@ class SlugsController extends Controller
      */
     public function index()
     {
+        $title = 'Услуги';
         $slugs = SlugsModel::all();
-        return view('admin.slugs.index', compact('slugs'));
+        return view('admin.slugs.index', ['title' => $title, 'slugs' => $slugs]);
     }
 
     /**
