@@ -43,4 +43,10 @@
             </a>
         </li>
     </ul>
+    <div class="mt-auto">
+    <form action="{{ route('logout') }}" method="POST" class="w-100">
+            @csrf
+            <button type="submit" class="btn btn-light w-100"><i class="fas fa-sign-out-alt me-2"></i>{{ Auth::user()->name }}</button>
+        </form>
+    </div>
 </div> 
